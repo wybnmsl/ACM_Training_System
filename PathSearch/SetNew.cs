@@ -36,8 +36,6 @@ namespace PathSearch
                     path = path.Substring(i+1, path.Length-i-1); //使用截取有风险，后续需要更改方法                   
                 }
             }
-            Console.Write(path);
-            Console.WriteLine("         ");
             //目前只能处理单层路径 多层路径的截取方法暂时未处理
             parentName = path;//得到自己父亲节点的name 
 
@@ -78,14 +76,13 @@ namespace PathSearch
             FilesGather.Add(newNode);
 
             string parentName;//父亲节点的name
-            /* for (int i = path.Length; i >= 0; i--)
-             {
-                 if (path[i] == (char)'G')
-                 {             
-                     path = path.Substring(i, path.Length-i); //使用截取有风险，后续需要更改方法                   
-                 }
-             }*/
-            //目前只能处理单层路径 多层路径的截取方法暂时未处理
+            for (int i = path.Length - 1; i >= 0; i--)
+            {
+                if (path[i] == '/')
+                {
+                    path = path.Substring(i + 1, path.Length - i - 1); //使用截取有风险，后续需要更改方法                   
+                }
+            }
             parentName = path;//得到自己父亲节点的name 
 
             foreach (Node s in FoldersGather)//查找题库中的父亲题库
