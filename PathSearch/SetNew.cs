@@ -29,13 +29,15 @@ namespace PathSearch
             FoldersGather.Add(newNode);
 
             string parentName;//父亲节点的name
-           /* for (int i = path.Length; i >= 0; i--)
+           for (int i = path.Length-1; i >= 0; i--)
             {
-                if (path[i] == (char)'G')
+                if (path[i] == '/')
                 {             
-                    path = path.Substring(i, path.Length-i); //使用截取有风险，后续需要更改方法                   
+                    path = path.Substring(i+1, path.Length-i-1); //使用截取有风险，后续需要更改方法                   
                 }
-            }*/
+            }
+            Console.Write(path);
+            Console.WriteLine("         ");
             //目前只能处理单层路径 多层路径的截取方法暂时未处理
             parentName = path;//得到自己父亲节点的name 
 

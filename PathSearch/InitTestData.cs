@@ -31,7 +31,7 @@ namespace PathSearch
 				ss += ii;
 				aa.SetName(ss);
 				aa.SetType(0);
-				aa.SetPath(ss+"Gather1");//路径为自己的加Gather1
+				aa.SetPath("Gather1/" + ss);//路径为自己的加Gather1
 				Node bb = new Node();
 				bb.folders = aa;
 				bb.SetMyType(false);
@@ -52,7 +52,7 @@ namespace PathSearch
 				ss += ii;
 				aa.SetName(ss);
 				aa.SetType(1);
-				aa.SetPath(ss+"Gather1");
+				aa.SetPath("Gather1/"+ss);
 				Node bb = new Node();
 				bb.files = aa;
 				bb.SetMyType(true);
